@@ -1,0 +1,22 @@
+.navbar-nav .nav-link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.1em;
+    margin-right: 20px;
+}
+
+
+.custom-navbar {
+    background-color: #7bbbfa; /* Cambia esto al color de fondo deseado */
+  }
+  
+  .custom-navbar .navbar-nav .nav-link {
+    color: #000000 !important; /* Cambia esto al color del texto deseado */
+  }
+  
+  .custom-navbar .navbar-brand .navbar-logo {
+    filter: brightness(0) invert(1); /* Opcional: para ajustar el logo si es necesario */
+  }
+  
+  .custom-navbar .cart-widget svg {
+    fill: #000000; /* Cambia esto al color del icono deseado */
+  }
