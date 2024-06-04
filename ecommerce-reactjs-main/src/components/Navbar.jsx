@@ -11,20 +11,20 @@ function NavBar() {
       <Container>
         <Navbar.Brand href="#home">
           <img
-            src="/assets/mr.Lion.png"
-            width="80px"
-            height="80px"
+            src="../public/assets/img/mr.Lion.png"
+            width="90px"
+            height="90px"
             className="d-inline-block align-top"
-            alt="logo"
+            alt="Mr. Lion"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#products">Productos</Nav.Link>
-            <Nav.Link href="#products">Promociones</Nav.Link>
-            <Nav.Link href="#about-us">Sobre Nosotros</Nav.Link>
+            <Nav.Link href="#products">Camisetas</Nav.Link>
+            <Nav.Link href="#products">Pantalones</Nav.Link>
+            <Nav.Link href="#products">Camperas</Nav.Link>
             <Nav.Link href="#contact">Contactos</Nav.Link>
           </Nav>
           <CartWidget />

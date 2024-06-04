@@ -1,10 +1,12 @@
-function CartWidget() {
-    return (
-        <div>
-            <img src='/assets/icons/cart.svg' height={32} width='auto' alt='cart icon' />
-            <span>(0)</span>
-        </div>
-    );
+import React from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
+
+const CartWidget = () => {
+  return (
+    <div>
+      <FaShoppingCart size={30} />
+    </div>
+  );
 }
 
-export default CartWidget
+export default CartWidget;
