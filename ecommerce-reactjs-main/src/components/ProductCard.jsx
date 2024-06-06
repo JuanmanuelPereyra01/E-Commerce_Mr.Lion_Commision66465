@@ -1,17 +1,22 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import './ProductCard.css';
 
 const ProductCard = ({ product, addToCart }) => {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={product.image} />
-      <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>${product.price}</Card.Text>
-        <Button variant="primary" onClick={() => addToCart(product)}>Add to Cart</Button>
-      </Card.Body>
-    </Card>
+    <div className="product-card">
+      <img src={product.image} alt={product.title} className="product-image" />
+      <div className="product-info">
+        <h3>{product.title}</h3>
+        <p>{product.description}</p>
+        <div className="product-footer">
+          <span className="product-price">${product.price}</span>
+          <button onClick={() => addToCart(product)} className="add-to-cart-button">
+            Comprar
+          </button>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default ProductCard;

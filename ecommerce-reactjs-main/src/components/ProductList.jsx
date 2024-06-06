@@ -1,19 +1,15 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import { Container, Row, Col } from 'react-bootstrap';
+import './ProductList.css';
 
 const ProductList = ({ products, addToCart }) => {
   return (
-    <Container>
-      <Row>
-        {products.map(product => (
-          <Col key={product.id} md={4}>
-            <ProductCard product={product} addToCart={addToCart} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="product-list">
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} addToCart={addToCart} />
+      ))}
+    </div>
   );
-}
+};
 
 export default ProductList;

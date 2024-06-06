@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .custom-navbar {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .custom-navbar a {
+    color: white;
+  }
+  
+  .custom-navbar a:hover {
+    color: #d4d4d4;
+  }
+  
