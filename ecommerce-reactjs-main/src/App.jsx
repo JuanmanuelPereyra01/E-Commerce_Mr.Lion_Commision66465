@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './components/Navbar';
 import ProductList from './components/ProductList';
+import Carro from './components/Carro';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -298,6 +299,7 @@ const initialProducts = [
 const App = () => {
   const [products] = useState(initialProducts); // Estado para los productos
   const [filteredProducts, setFilteredProducts] = useState([]); // Estado para productos filtrados
+  const [cart, setCart] = useState([]); // Estado para el carrito
 
   useEffect(() => {
     setFilteredProducts(products); // Inicializa los productos filtrados con todos los productos al inicio
@@ -312,16 +314,36 @@ const App = () => {
     }
   };
 
-  const addToCart = (product) => {
-    console.log('Adding to cart:', product); // Lógica para añadir al carrito (por implementar)
+  const addToCart = (product, quantity) => {
+    setCart(prevCart => {
+      const existingProductIndex = prevCart.findIndex(item => item.product.id === product.id);
+      if (existingProductIndex !== -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingProductIndex].quantity += quantity;
+        return updatedCart;
+      } else {
+        return [...prevCart, { product, quantity }];
+      }
+    });
+  };
+
+  const removeFromCart = (productId) => {
+    setCart(prevCart => prevCart.filter(item => item.product.id !== productId));
+  };
+
+  const handlePurchase = () => {
+    // Lógica para manejar la compra de todos los productos
+    alert('Compra realizada con éxito!');
+    setCart([]); // Vacía el carrito después de la compra
   };
 
   return (
-    <div>
-      <NavBar filterProductsByCategory={filterProductsByCategory} /> 
-      <ProductList products={filteredProducts} addToCart={addToCart} /> 
+    <div className="App">
+      <NavBar filterProductsByCategory={filterProductsByCategory} cartItemCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
+      <ProductList products={filteredProducts} addToCart={addToCart} />
+      <Carro cart={cart} removeFromCart={removeFromCart} handlePurchase={handlePurchase} />
     </div>
   );
-}
+};
 
 export default App;

@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
 import './NavBar.css'; // Importa el archivo CSS
 
-function NavBar({ filterProductsByCategory }) {
+function NavBar({ filterProductsByCategory, cartItemCount }) {
   return (
     <Navbar expand="lg" className="custom-navbar py-3">
       <Container>
@@ -28,7 +28,7 @@ function NavBar({ filterProductsByCategory }) {
             <Nav.Link onClick={() => filterProductsByCategory('postre')} id="postres">Postres</Nav.Link>
             <Nav.Link onClick={() => filterProductsByCategory('bebida')} id="bebidas">Bebidas</Nav.Link>
           </Nav>
-          <CartWidget itemCount={0} />
+          <CartWidget itemCount={cartItemCount} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

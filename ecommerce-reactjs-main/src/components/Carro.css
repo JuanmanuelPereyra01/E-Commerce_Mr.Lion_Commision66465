@@ -1,0 +1,42 @@
+.carro {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .carro h2 {
+    margin-bottom: 20px;
+  }
+  
+  .carro ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .carro li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-info span {
+    margin: 0 10px;
+  }
+  
+  .total {
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
