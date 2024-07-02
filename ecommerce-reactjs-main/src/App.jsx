@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import ProductList from './components/ProductList';
 import Carro from './components/Carro';
@@ -338,11 +339,15 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <NavBar filterProductsByCategory={filterProductsByCategory} cartItemCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
-      <ProductList products={filteredProducts} addToCart={addToCart} />
-      <Carro cart={cart} removeFromCart={removeFromCart} handlePurchase={handlePurchase} />
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar filterProductsByCategory={filterProductsByCategory} cartItemCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
+        <Routes>
+          <Route path="/" element={<ProductList products={filteredProducts} addToCart={addToCart} />} />
+          <Route path="/carro" element={<Carro cart={cart} removeFromCart={removeFromCart} handlePurchase={handlePurchase} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

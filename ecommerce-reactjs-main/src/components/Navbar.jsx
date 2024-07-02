@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -28,7 +29,9 @@ function NavBar({ filterProductsByCategory, cartItemCount }) {
             <Nav.Link onClick={() => filterProductsByCategory('postre')} id="postres">Postres</Nav.Link>
             <Nav.Link onClick={() => filterProductsByCategory('bebida')} id="bebidas">Bebidas</Nav.Link>
           </Nav>
-          <CartWidget itemCount={cartItemCount} />
+          <Link to="/Carro">
+            <CartWidget itemCount={cartItemCount} />
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

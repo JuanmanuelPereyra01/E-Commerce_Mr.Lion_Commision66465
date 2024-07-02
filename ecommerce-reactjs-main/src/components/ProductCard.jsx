@@ -34,7 +34,7 @@ const ProductCard = ({ product, addToCart }) => {
         <div className="product-footer">
           <span className="product-price">${product.price}</span>
           <button onClick={handleAddToCart} className="add-to-cart-button">
-            Comprar
+            Agregar
           </button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Carro.css';
 
 const Carro = ({ cart, removeFromCart, handlePurchase }) => {
@@ -6,14 +7,18 @@ const Carro = ({ cart, removeFromCart, handlePurchase }) => {
 
   return (
     <div className="carro">
+      <div className="back-button">
+        <Link to="/">← Volver</Link>
+      </div>
       <h2>Carrito de Compras</h2>
       <ul>
         {cart.map((item, index) => (
           <li key={index}>
             <div className="product-info">
-              <span>{item.product.name}</span>
-              <span>{item.quantity}</span>
-              <span>${item.product.price * item.quantity}</span>
+              <img src={item.product.image} alt={item.product.name} className="product-image" />
+              <span>{item.product.title}</span>
+              <span>Cantidad: {item.quantity}</span>
+              <span>Precio: ${item.product.price * item.quantity}</span>
               <button onClick={() => removeFromCart(item.product.id)}>🗑️</button>
             </div>
           </li>
